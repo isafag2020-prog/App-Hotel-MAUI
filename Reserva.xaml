@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppHotel.Reserva"
+             Title="App Hotel - Reservas"
+             BackgroundColor="#0B192C"> <!-- Azul Marinho Profundo -->
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30,40" Spacing="25" VerticalOptions="Start">
+
+            <Label Text="Nova Reserva" 
+                   FontSize="28" 
+                   TextColor="#FFD700" 
+                   FontAttributes="Bold" /> <!-- Dourado -->
+
+            <!-- Campos de Entrada -->
+            <VerticalStackLayout Spacing="10">
+                <Label Text="Nome do Hóspede:" TextColor="#C8C8C8" FontSize="16" />
+                <Entry Placeholder="Ex: Bella Fagundes" BackgroundColor="#1E2A3A" TextColor="White" />
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Spacing="10">
+                <Label Text="Data de Check-in:" TextColor="#C8C8C8" FontSize="16" />
+                <DatePicker BackgroundColor="#1E2A3A" TextColor="White" />
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Spacing="10">
+                <Label Text="Tipo de Quarto:" TextColor="#C8C8C8" FontSize="16" />
+                <Picker BackgroundColor="#1E2A3A" TextColor="White" Title="Selecione um Quarto">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Quarto Standard</x:String>
+                            <x:String>Suíte Master</x:String>
+                            <x:String>Suíte Luxo</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+            </VerticalStackLayout>
+
+            <Button Text="CONFIRMAR RESERVA" 
+                    Clicked="OnConfirmarClicked" 
+                    BackgroundColor="#FFD700" 
+                    TextColor="#0B192C" 
+                    FontAttributes="Bold"
+                    CornerRadius="15" 
+                    HeightRequest="55" 
+                    Margin="0,30,0,0"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
